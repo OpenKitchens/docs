@@ -41,30 +41,99 @@ WebAppを作るときに必要なものは何でしょう。
 を提供するので堅苦しい仕様書とスーツを着たIBMとCiscoの管理者の監視を用意する必要はありません。
 
 **👇️水Protocolのネットワーク構造**
-<img src="/images/introduction/suiprotocol-docs-introduction.png" alt="web2.0の構造" style="border-radius: 8px" />
+<img src="/images/introduction/suiprotocol-docs-introduction.png" alt="tailaProtocol" style="border-radius: 8px" />
 
 以下に流れを示します。
 
-水Protocolのアプリケーション（以下水アプリケーション）はユーザーが実行するJSとフロントエンドを用意しておきます。
+水Protocolのアプリケーション（以下水アプリケーション）は水Protocolの拡張されたJSとUIを用意しておきます。
 
-ユーザーのアクセスがあったら水アプリケーションはそのJSとフロントエンドをレスポンスします。
+ユーザーのアクセスがあったら水アプリケーションはそのJSとUIをレスポンスします。
 
-ユーザーはそのJSを解釈しデータベースへアクセスを行ったり、データベースまたはJSに記述された他のノードにアクセスしたりします。
+ブラウザは拡張されたJSにデータベースや他のノードへのアクセスを行うTailaCall(詳細は[こちら](/ja/about_architecture))を提供し、一般的なWebアプリに必要な物をカバーします。
 
-JSに記述されたTailaAPIによりTailaEngine(詳細は下の方で)に接続をし、適切な処理を行いリンクUIとフロントエンドとの統合処理を行います。
+このとき、TailaCallを用いて他のユーザーのノードと接続し合うプログラムをアプリケーションで用意することによってバラバラのデータベースでも他のノードとリンクされた物になり、WebApp的な扱いをすることができます。
 
 するとあら不思議。まるで普通のWebAppのようです。
 
-### シーズンの仕組み
+つまり、従来のWebアプリではバックエンドとして必要だったものを単純な分散コンピューティングではなく、各ノードが繋がり合い、データを共有し合い保証するBitcoin的な手法を用いることにより、本当のWeb3.0を実現するということです。
 
-//水APIが提供する投票機能を元に、、
+### シーズンの仕組み
+FPSゲームはお好きですか？残念ながら僕は好きじゃありません
+
+FPSゲームにはよくシーズンという仕組みがでてきます。
+
+水Protocolはシーズン性からインスピレーションを受け、新しいアイデアを追加します。
+
+水Protocolは数ヶ月に一回大規模なシステム改変、または機能の追加と削除を行います。
+これは一般的なFPSのシーズンの仕組みでよく見られるものです。
+
+水Protocolの違うところはこれらが民主主義によって実現されることです。
+
+水Protocolの仕様についてのアイデアがあればTailaAPI(詳細は[こちら](/ja/about_architecture))のリンクUIによって生成される議会提出を使えば議会への提案ができます。
+
+議会に提案された仕様はユーザーの投票によって審査され、投票最終日はイベント会場で各仕様の立案者たちとディベートや投票数の実況をして祭りを楽しむことが出来ます。
+
+下記がシーズンの流れです。
+<img src="/images/introduction/season.png" alt="season" style="border-radius: 8px" />
+
+
+さらに多様性予測理論を応用したAPIの設計により、現実世界の民主主義よりも優れた民主主義を実現出来ます。
+
 
 ### 水APIが提供する基本的な機能
+インターネット黎明期には、「Web」すわなち各ネットユーザーが用意したページ同士がハイパーリンクで繋がり合い、Twitterのような巨大なサーバーを持つサービスがなくともそういった交流が行えてたときがありました。
 
-//ここにライブUIとかを書く
-//なんでも共有リンクとかも
+しかし、今のインターネットはFacebookやTwitter、イーロン・マスクといった資本家がインターネットの構造を牛耳っています。
+どうしてこうなってしまったのでしょうか。
+
+簡単に言うと、ただの「web」には速さとリアルタイム性あと情報を簡単に共有する手段がなかったのです。
+
+どんなに面白い「webページ」を作ったとしてもReadme!Japanに登録してからユーザーがアクセスするまでには途方も無い時間がかかりますし、
+そこで人々が交流しあい、十分な文化が作られるにはもっと時間がかかります。
+
+さらにトレンド機能や簡単にWebを共有する方法がないのでネットユーザーならばみんな知っている流行などはなかなか実体化しませんでした。
+
+そこで水Protocolはハイパーリンクを入力するだけでUIが表示されるTailaAPIを提供します。（ちなみにコレをリンクUIと呼びます。）
+TailaAPIは主に3種類のコンポーネントからなります。
+
+#### TailaShareAPI
+1つ目が`taila://share`です。
+水Protocolは、VCでもチャットでも投稿でもサイトでもなんでもハイパーリンク化できるので`shareAPI`のクエリにハイパーリンクを入力するだけで共有が行えます。
+shareで共有されたこの情報もまたshareで共有することができるので、それらがどんどん拡散されて行き、最終的にトレンドを作ること出来ます。
+
+*実際のshareのリンクUI*
+<img src="/images/introduction/share.png" alt="share" style="border-radius: 8px; width: 60%" />
+
+#### TailaVC,ChatAPI
+2つ目が`taila://vc`と`taila://chat`です。
+vcやチャットをリンクUIだけで生成でき、即席の話し合いや通話が行えます。
+これによりネットユーザーの集団としての力のサポートができます。
+
+*実際のVC、ChatのリンクUI*
+<img src="/images/introduction/vc.png" alt="vc" style="border-radius: 8px; width: 60%" />
+<img src="/images/introduction/chat.png" alt="chat" style="border-radius: 8px; width: 60%" />
+
+##### TailaShareとVCやChatを組み合わせる
+TailaShareとこれらの要素を組み合わせる事により、野球放送のWebページや、イベントのWebページを開きながら他のユーザーとチャットやVCをすることが出来ます。
+これによりいわゆる「祭り」としての側面の強化などが行えます。
+
+*Chat+web*
+<img src="/images/introduction/chat+web.png" alt="vc" style="border-radius: 8px; width: 60%" />
+
+#### TailaView
+3つ目がこれらの情報を表示するリンクUIです。
+TailaViewはTwiterのようなタイムラインを形成し表示することも通知のように表示することも出来ます。
+
+*通知で表示*
+<img src="/images/introduction/notification.png" alt="notification" style="border-radius: 8px; width: 60%" />
+
+*Twitterのようなタイムラインで表示（別ウィンドウ表示）*
+<img src="/images/introduction/tailaview.png" alt="notification" style="border-radius: 8px; width: 60%" />
 
 ### 社会性(SNS)としての機能
 
 //Taila Indentityを元に話を広げる
-
+//tailaViewとかを埋め込んでリスト化できる話もする
+//taila Identityがそういった自身のWebページをレスポンスする話もする。
+//Discordのサーバーのような役割も果たす
+//Webはリアルタイムで変更出来る

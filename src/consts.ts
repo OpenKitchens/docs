@@ -43,10 +43,14 @@ export const SIDEBAR: Sidebar = {
       { text: '水Protocolを入手', link: 'ja/howtodeploy' },
       { text: '水の哲学（見なくてもよい）', link: 'ja/about' }
     ],
-    '開発者向けドキュメント': [
+    'アーキテクチャ': [
       { text: 'Page 1', link: 'ja/page-1' },
       { text: 'Page 2', link: 'ja/page-2' },
       { text: 'Page 3', link: 'ja/page-3' }
+    ],
+    '具体的な実装例': [
+      { text: 'アプリケーションの実装例', link: 'ja/page-1' },
+      { text: 'プラグインの実装例', link: 'ja/page-2' },
     ]
   },
   en: {
