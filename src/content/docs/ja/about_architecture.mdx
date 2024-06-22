@@ -14,11 +14,13 @@ description: 'Docs intro'
 
 で成り立ちます
 
-そしてこれらの要素はそれぞれ独立したDockerコンテナとして実行されます
+そしてこれらの要素はそれぞれ独立したDockerコンテナとしてユーザーのローカル環境で実行されます
 
-そのためこれらの独立したコンテナ同士で通信を行うことで一つのアプリケーションのように動作します。
+そのためこれらの独立したコンテナ同士で通信を行うことで一つのローカルアプリケーションのように動作します。
 
-<img src="/images/architecture/docker.png" alt="web2.0の構造" style="border-radius: 8px" />
+通常ではバックエンドとしてサーバーに実行されるところをDockerでユーザーのローカル環境で実行しユーザーのNodeが他のNodeと通信し合う事により機能を補います。
+
+<img src="/images/architecture/docker.png" alt="" style="border-radius: 8px" />
 
 
 ### 水エンジン(Taila Engine)
@@ -35,7 +37,11 @@ Taila Callは他のノードとのp2p通信やデータベースへの編集と�
 Taila APIはリンクUIでブラウザでハイパーリンクオンリーで実行されるのに対し、
 Taila Callは他のノードへ通信したり、ベータベースの機能をアプリケーション向けに提供します。
 
-<img src="/images/architecture/callandapi.png" alt="web2.0の構造" style="border-radius: 8px" />
+*Taila APIの場合*
+<img src="/images/architecture/taila api.png" alt="" style="border-radius: 8px" />
+
+*Taila Callの場合*
+<img src="/images/architecture/taila call.png" alt="" style="border-radius: 8px" />
 
 
 ### 水ブラウザ/リンクUI(Taila browser/LinkUI)
