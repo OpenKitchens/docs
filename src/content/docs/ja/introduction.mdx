@@ -128,12 +128,29 @@ TailaViewはTwiterのようなタイムラインを形成し表示すること�
 <img src="/images/introduction/notification.png" alt="notification" style="border-radius: 8px; width: 60%" />
 
 *Twitterのようなタイムラインで表示（別ウィンドウ表示）*
-<img src="/images/introduction/tailaview.png" alt="notification" style="border-radius: 8px; width: 60%" />
+<img src="/images/introduction/tailaview.png" alt="notification" style="border-radius: 8px; width: 60%;border: solid 1px #0000001f;" />
 
 ### 社会性(SNS)としての機能
+水エンジンが提供する（詳細は[こちら](/ja/about_architecture)）Taila IndentityはTwitterで言うところのアカウントに当たります。
+このTaila Indentityは以下を提供します
+- 信用値
+- 所属
+- ビューリスト
+- マイWEB
+- プラグイン
+- タイムライン
 
-//Taila Indentityを元に話を広げる
-//tailaViewとかを埋め込んでリスト化できる話もする
-//taila Identityがそういった自身のWebページをレスポンスする話もする。
-//Discordのサーバーのような役割も果たす
-//Webはリアルタイムで変更出来る
+これらのデータはデータベースの特別な領域に保存されます。
+
+「信用値」は自分の信用値を保存します。
+この信用値は他人からの評価で決まります。これにより、データの信用度をネット上で保証することが出来ます。
+
+「所属」はDiscordのサーバーのようなもので、特定のコミュニティに所属していることを証明し、コミュニティ内の投稿を取得、また自身が主のコミュニティのデータを保存します。Twitterのリストのようなビューリストも共有することが出来ます。
+
+「ビューリスト」では特定のユーザーや種類の投稿やコンポーネントをリスト化する事ができます。（Twitterのリストを想像してください！）
+
+「マイWEB」では自分のWebを公開できます。WebAppと呼ばれるものでも良いでしょうし、ただの紹介Webでも良いです。TailaCallによる拡張されたJSをお楽しみください！`http://`ではなく水Protocolの`taila://`をつかって通信をするのでサーバーの用意の必要はありません！
+
+「プラグイン」では水Protocolが提供するAPIをつかった面白いMODを入れることが出来ます。（しかも誰でも開発可能！お金は必要ありません！）
+
+「タイムライン」はTailaViewを保存し、いつでも見返せるようにします。
