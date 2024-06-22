@@ -38,19 +38,19 @@ export type Sidebar = Record<
 export const SIDEBAR: Sidebar = {
   ja: {
     'ガイド': [
-      { text: 'Introduction', link: 'ja/introduction' },
-      { text: 'アーキテクチャ', link: 'ja/about_architecture' },
-      { text: '水Protocolを入手', link: 'ja/howtodeploy' },
-      { text: '水の哲学（見なくてもよい）', link: 'ja/about' }
+      { text: 'Introduction', link: 'ja/guide/introduction' },
+      { text: 'アーキテクチャ', link: 'ja/guide/about_architecture' },
+      { text: '水Protocolを入手', link: 'ja/guide/howtodeploy' },
+      { text: '水の哲学（見なくてもよい）', link: 'ja/guide/about' }
     ],
     'アーキテクチャ': [
-      { text: 'Page 1', link: 'ja/page-1' },
-      { text: 'Page 2', link: 'ja/page-2' },
-      { text: 'Page 3', link: 'ja/page-3' }
+      { text: 'Page 1', link: 'ja/guide/page-1' },
+      { text: 'Page 2', link: 'ja/guide/page-2' },
+      { text: 'Page 3', link: 'ja/guide/page-3' }
     ],
     '具体的な実装例': [
-      { text: 'アプリケーションの実装例', link: 'ja/page-1' },
-      { text: 'プラグインの実装例', link: 'ja/page-2' },
+      { text: 'アプリケーションの実装例', link: 'ja/guide/page-1' },
+      { text: 'プラグインの実装例', link: 'ja/guide/page-2' },
     ]
   },
   en: {
