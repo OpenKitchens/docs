@@ -44,7 +44,7 @@ export const SIDEBAR: Sidebar = {
       { text: '水の哲学（見なくてもよい）', link: 'ja/guide/about' }
     ],
     'アーキテクチャ': [
-      { text: 'Page 1', link: 'ja/guide/page-1' },
+      { text: 'Identity', link: 'ja/arc/identity' },
       { text: 'Page 2', link: 'ja/guide/page-2' },
       { text: 'Page 3', link: 'ja/guide/page-3' }
     ],
