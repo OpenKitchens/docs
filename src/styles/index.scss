@@ -407,3 +407,15 @@ h2.heading {
 .current-header-link a {
   color: var(--theme-text);
 }
+
+.next {
+  border: 1.5px solid var(--theme-text-accent);
+  display: block;
+  background-color: rgba(106,31,255,0.05);
+  border-radius: 8px;
+  padding: 10px 20px 10px 20px;
+}
+
+.next h3{
+  margin-top: 20px;
+}
