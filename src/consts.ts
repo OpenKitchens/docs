@@ -38,10 +38,10 @@ export type Sidebar = Record<
 export const SIDEBAR: Sidebar = {
   ja: {
     'ガイド': [
+      { text: 'インターネットの呪い', link: 'ja/guide/about' },
       { text: 'Introduction', link: 'ja/guide/introduction' },
       { text: 'アーキテクチャ', link: 'ja/guide/about_architecture' },
-      { text: '水Protocolを入手', link: 'ja/guide/howtodeploy' },
-      { text: '水の哲学（見なくてもよい）', link: 'ja/guide/about' }
+      { text: '水Protocolを入手', link: 'ja/guide/howtodeploy' }
     ],
     'アーキテクチャ': [
       { text: 'Identity', link: 'ja/arc/identity' },
