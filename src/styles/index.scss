@@ -419,3 +419,20 @@ h2.heading {
 .next h3{
   margin-top: 20px;
 }
+
+.pagelink{
+  background-color: var(--theme-bg-accent);
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+}
+
+.pagelink a{
+  color: var(--theme-text);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.pagelink p{
+  font-size: 0.8rem;
+}

@@ -20,7 +20,7 @@ const sidebar = SIDEBAR[langCode]
       Object.entries(sidebar).map(([header, children]) => (
         <li>
           <div class="nav-group">
-            <h4>{header}</h4>
+            <h5>{header}</h5>
             <ul>
               {children.map((child) => {
                 const url = Astro.site?.pathname + child.link
@@ -31,6 +31,7 @@ const sidebar = SIDEBAR[langCode]
                       aria-current={
                         currentPageMatch === child.link ? 'page' : false
                       }
+                      style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
                       {child.text}
                     </a>

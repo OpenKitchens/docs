@@ -43,10 +43,19 @@ export const SIDEBAR: Sidebar = {
       { text: 'アーキテクチャ', link: 'ja/guide/about_architecture' },
       { text: '水Protocolを入手', link: 'ja/guide/howtodeploy' }
     ],
-    'アーキテクチャ': [
+    'アーキテクチャ(Taila Engine)目次': [
       { text: 'Identity', link: 'ja/arc/identity' },
-      { text: 'Page 2', link: 'ja/guide/page-2' },
-      { text: 'Page 3', link: 'ja/guide/page-3' }
+      { text: 'Taila API', link: 'ja/guide/page-2' },
+      { text: 'Taila Call', link: 'ja/guide/page-3' }
+    ],
+    'Identity': [
+      { text: 'アカウント作成機能/招待状受理機能', link: 'ja/identity/create_account' }
+    ],
+    'Taila API': [
+
+    ],
+    'Taila Call': [
+
     ],
     '具体的な実装例': [
       { text: 'アプリケーションの実装例', link: 'ja/guide/page-1' },

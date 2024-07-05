@@ -1,6 +1,59 @@
 ---
 title: 'Identity'
-description: 'Docs arc'
+description: 'Docs architecture'
 ---
 
 **Identityについて**
+
+Identity(a.k.a 水アカウント)は水Protocol上の絶対的な自分の証明で、GoogleアカウントやTwitterアカウントを超えたhyperlink上で動くIPアドレスに限りなく近いアカウントのようなものです。
+そのため依存はIPアドレスに基づくP2P、そしてユーザー自身の保有するDatabaseに限るのでGoogleアカウントのような支配を受けることもありません。
+
+Identityは水Protocolの通信と強い関係を持ちます。
+そしてSNSのようなコミュニティへの帰還、user同士の信頼と友人関係を証明します。
+
+Identityはその設計をインターネットの初期にあったニュースグループの思想に強く影響されています。
+
+Identity情報はp2p通信で使用されるハンドルネームとIPアドレスに紐づけされたドメイン名を持ちます。`domain.com@handle`
+
+### 水アカウントの提供する機能:
+
+
+<div class="pagelink">
+  <a href="/ja/identity/create_account">アカウント作成機能/招待状受理機能</a>
+  <p>この仕組みではP2Pのシグナリングサーバー無しに通信をするためのアカウント作成時のアイデアが含まれます。</p>
+</div>
+
+<div class="pagelink">
+  <a href="">アカウントリンク機能</a>
+  <p>Discordのフレンドのような機能を提供します。</p>
+</div>
+
+<div class="pagelink">
+  <a href="">コミュニティリンク</a>
+  <p>Discordのフレンドのような機能を提供します。</p>
+</div>
+
+<div class="pagelink">
+  <a href="">アカウント招待状作成機能</a>
+  <p>アカウントリンクまたは招待状の作成する機能を提供し、P2Pの通信の設定を行います。</p>
+</div>
+
+<div class="pagelink">
+  <a href="">データベースアクセス許可機能</a>
+  <p>データベースへのアクセスを管理しセキュリティ脅威からユーザーを守ります</p>
+</div>
+
+<div class="pagelink">
+  <a href="">投票機能</a>
+  <p>シーズンのアイデアを投票できめるための機能を提供します。</p>
+</div>
+
+<div class="pagelink">
+  <a href="">シーズンデータ取得機能</a>
+  <p>シーズンのアイデアを公開したり、アイデアのデータを取得できます。</p>
+</div>
+
+<div class="pagelink">
+  <a href="">水Page</a>
+  <p>拡張された水JSをつかったWebアプリや個人サイトを作成しTailaP2Pネットワーク上で公開出来ます。</p>
+</div>
